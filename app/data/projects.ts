@@ -171,8 +171,8 @@ export const projects = [
     logo: '',
     category: 'AI Agents',
     badge: 'AI Agent Platform',
-    description: 'An AI agent launchpad and economy that has deployed 4,500+ agents on Robinhood Chain, spanning trading, yield, RWA, and agent-to-agent commerce.',
-    longDescription: "Virtuals Protocol brought its AI agent platform to Robinhood Chain, where builders have launched more than 4,500 agents generating over $150 million in agent-driven volume, with agent builders collectively raising $2.3 million. Live products span AI trading, yield optimization, privacy infrastructure, developer tools, token intelligence, tokenized real-world assets (including tokenized tax liens \u2014 a genuinely novel RWA category), collectibles, and agent-to-agent services. Virtuals fits squarely into the 'agentic AI' narrative Robinhood highlighted at its July 1 mainnet launch, positioning autonomous agents as economic participants on the chain rather than just trading tools.",
+    description: 'The AI-agent infrastructure layer for Robinhood Chain since day one — 4,500+ agents deployed, powering a roughly $200M agent economy within its first month.',
+    longDescription: "Virtuals Protocol was integrated as Robinhood Chain's agent infrastructure from mainnet launch, letting anyone create, fund, own, and deploy autonomous AI agents that transact in tokenized markets. In its first week alone, agents drove $30 million in DEX volume; within a month, CryptoBriefing pegged the resulting agent economy at roughly $200 million, with builders raising $2.7 million. Named launch-week agents include ArAIstotle (prediction-market insights, also live on OKX), Raxol (a privacy swap bridge built with Xochi.fi), and useOttoAI (ranked #3 by unique buyers on Base's x402scan). The ecosystem also spun up agent-specific tradeable tokens like $GTR and $PRIZE alongside the platform's own VIRTUAL token, which sat in a $370-395M circulating market cap range as of late July 2026.",
     tags: ['AI Agents', 'Infrastructure', 'RWA'],
     products: [
       { name: 'Agent Launchpad', description: 'Deploy autonomous AI agents that trade, optimize yield, or provide services' },

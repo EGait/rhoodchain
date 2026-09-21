@@ -7,10 +7,9 @@ import { rwas } from '../data/rwas'
 import { lsts } from '../data/lsts'
 import { topStockTokens } from '../data/topStockTokens'
 import { memeStockPairs } from '../data/memeStockPairs'
+import TvlGrowthChart from '../components/TvlGrowthChart'
 
 export default function MarketsPage() {
-  const rwaCategories = Array.from(new Set(rwas.map((r: any) => r.category)))
-
   return (
     <main className="bg-[#08100c] min-h-screen text-gray-100">
       <Navbar />
@@ -126,8 +125,28 @@ export default function MarketsPage() {
             </div>
           </div>
           <p className="text-xs text-gray-600 mb-4">
-            More than 190 Stock Tokens are available depending on jurisdiction, but volume is heavily concentrated: the four biggest names account for roughly 70% of all stock-token trading on the network. NVDA alone has traded over $700M across nearly 3 million swaps since mainnet — more than any other single asset, including index funds. Figures below are lifetime DEX volume through late August/early September 2026 and will shift as trading continues.
+            More than 2,000 Stock Tokens are listed in the full catalog (roughly 190-200 with meaningful onchain trading volume), but activity is heavily concentrated: the four biggest names account for roughly 70% of all stock-token trading on the network. NVDA alone has traded over $700M across nearly 3 million swaps since mainnet — more than any other single asset, including index funds. Figures below are lifetime DEX volume through late August/early September 2026 and will shift as trading continues.
           </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <TvlGrowthChart />
+            <a
+              href="https://robinhood.com/rhj/stocktokens/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl p-5 flex flex-col justify-center items-center text-center transition-all hover:scale-[1.02]"
+              style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}
+            >
+              <span className="text-3xl mb-3">📋</span>
+              <div className="text-sm font-medium text-gray-200 mb-1">Browse the Full Catalog</div>
+              <p className="text-xs text-gray-500 mb-3">
+                See all 2,000+ Stock Tokens — not just the top 4 by volume — directly on Robinhood's official product page.
+              </p>
+              <span className="text-xs px-4 py-2 rounded-lg font-medium" style={{ backgroundColor: '#22C55E', color: '#08100c' }}>
+                Open Official Catalog ↗
+              </span>
+            </a>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {topStockTokens.map((s: any) => (
@@ -208,50 +227,56 @@ export default function MarketsPage() {
           </div>
         </div>
 
-        {/* RWA category sections */}
-        {rwaCategories.map((cat) => (
-          <div key={cat} className="mb-10">
-            <h2 className="text-lg font-medium text-gray-200 mb-4">{cat}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {rwas
-                .filter((r: any) => r.category === cat)
-                .map((r: any) => (
-                  <div
-                    key={r.id}
-                    className="rounded-lg border p-5"
-                    style={{ borderColor: 'rgba(34,197,94,0.2)', backgroundColor: 'rgba(34,197,94,0.04)' }}
+        {/* RWA & Agentic products — one shared grid rather than one section
+            per category, since most categories here only have a single entry */}
+        <div className="mb-10">
+          <h2 className="text-lg font-medium text-gray-200 mb-1">Real-World Assets &amp; Agentic Infrastructure</h2>
+          <p className="text-xs text-gray-600 mb-4">
+            Beyond tokenized stocks and stablecoin yield, a handful of other real-world-asset and AI-agent products are live on Robinhood Chain.
+          </p>
+          <div className={
+            rwas.length === 1
+              ? "grid grid-cols-1 max-w-sm"
+              : rwas.length === 2
+              ? "grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl"
+              : "grid grid-cols-1 md:grid-cols-3 gap-4"
+          }>
+            {rwas.map((r: any) => (
+              <div
+                key={r.id}
+                className="rounded-lg border p-5 flex flex-col"
+                style={{ borderColor: 'rgba(34,197,94,0.2)', backgroundColor: 'rgba(34,197,94,0.04)' }}
+              >
+                <div className="flex items-baseline justify-between gap-2 mb-1">
+                  <span className="text-gray-100 font-medium flex items-center gap-2">
+                    <span>{r.icon}</span> {r.name}
+                  </span>
+                </div>
+                <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-2">
+                  {r.issuer}
+                </div>
+                <p className="text-gray-400 text-xs leading-relaxed mb-4 flex-1">
+                  {r.description}
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span
+                    className="text-[10px] px-2 py-0.5 rounded-full border"
+                    style={{ backgroundColor: 'rgba(34,197,94,0.1)', borderColor: 'rgba(34,197,94,0.3)', color: '#22C55E' }}
                   >
-                    <div className="flex items-baseline justify-between gap-2 mb-2">
-                      <span className="text-gray-100 font-medium flex items-center gap-2">
-                        <span>{r.icon}</span> {r.name}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-widest text-gray-500 text-right">
-                        {r.issuer}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {r.description}
-                    </p>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span
-                        className="text-[10px] px-2 py-0.5 rounded-full border"
-                        style={{ backgroundColor: 'rgba(34,197,94,0.1)', borderColor: 'rgba(34,197,94,0.3)', color: '#22C55E' }}
-                      >
-                        {r.status}
-                      </span>
-                      <span
-                        onClick={() => window.open(r.url, '_blank')}
-                        className="text-[10px] cursor-pointer hover:opacity-80 transition-opacity ml-auto"
-                        style={{ color: '#22C55E' }}
-                      >
-                        Learn more ↗
-                      </span>
-                    </div>
-                  </div>
-                ))}
-            </div>
+                    {r.status}
+                  </span>
+                  <span
+                    onClick={() => window.open(r.url, '_blank')}
+                    className="text-[10px] cursor-pointer hover:opacity-80 transition-opacity ml-auto"
+                    style={{ color: '#22C55E' }}
+                  >
+                    Learn more ↗
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
 
       </div>
 
