@@ -31,6 +31,75 @@ export default function MarketsPage() {
 
       <div className="px-6 md:px-8 py-10 max-w-5xl mx-auto">
 
+        {/* Most traded stock tokens */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-1">
+            <h2 className="text-lg font-medium text-gray-200">Most Traded Stock Tokens</h2>
+            <div
+              className="text-[10px] px-2 py-0.5 rounded-full border"
+              style={{ backgroundColor: 'rgba(34,197,94,0.1)', borderColor: 'rgba(34,197,94,0.3)', color: '#22C55E' }}
+            >
+              Onchain data
+            </div>
+          </div>
+          <p className="text-xs text-gray-600 mb-4">
+            More than 2,000 Stock Tokens are listed in the full catalog (roughly 190-200 with meaningful onchain trading volume), but activity is heavily concentrated: the four biggest names account for roughly 70% of all stock-token trading on the network. NVDA alone has traded over $700M across nearly 3 million swaps since mainnet — more than any other single asset, including index funds. Figures below are lifetime DEX volume through late August/early September 2026 and will shift as trading continues.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <TvlGrowthChart />
+            <a
+              href="https://robinhood.com/rhj/stocktokens/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl p-5 flex flex-col justify-center items-center text-center transition-all hover:scale-[1.02]"
+              style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}
+            >
+              <span className="text-3xl mb-3">📋</span>
+              <div className="text-sm font-medium text-gray-200 mb-1">Browse the Full Catalog</div>
+              <p className="text-xs text-gray-500 mb-3">
+                See all 2,000+ Stock Tokens — not just the top 4 by volume — directly on Robinhood's official product page.
+              </p>
+              <span className="text-xs px-4 py-2 rounded-lg font-medium" style={{ backgroundColor: '#22C55E', color: '#08100c' }}>
+                Open Official Catalog ↗
+              </span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {topStockTokens.map((s: any) => (
+              <div
+                key={s.ticker}
+                className="rounded-lg border p-5"
+                style={{ borderColor: 'rgba(34,197,94,0.2)', backgroundColor: 'rgba(34,197,94,0.04)' }}
+              >
+                <div className="flex items-baseline justify-between gap-2 mb-1">
+                  <span className="font-medium" style={{ color: '#22C55E' }}>{s.ticker}</span>
+                  <span className="text-xs text-gray-500">{s.underlying}</span>
+                </div>
+                <div className="text-sm text-gray-200 mb-2">{s.name}</div>
+                <div className="text-xs text-gray-500 mb-3">{s.note}</div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-gray-800 text-gray-500">
+                    {s.volume}
+                  </span>
+                  {s.rank && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full" style={{ backgroundColor: 'rgba(34,197,94,0.1)', color: '#22C55E' }}>
+                      {s.rank}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-lg border p-4 mt-4" style={{ borderColor: 'rgba(34,197,94,0.15)', backgroundColor: 'rgba(34,197,94,0.03)' }}>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              ⚠️ Worth knowing: Robinhood Chain ran a 90-day gas subsidy covering swaps and stock-token transactions from launch, expiring around <strong className="text-gray-400">September 29, 2026</strong>. Some of the volume above may reflect subsidized activity — worth watching whether it holds once users pay full gas costs.
+            </p>
+          </div>
+        </div>
+
         {/* Stablecoins */}
         <div className="mb-12">
           <div className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: '#22C55E' }}>
@@ -109,75 +178,6 @@ export default function MarketsPage() {
           <div className="rounded-lg border p-4 mt-4" style={{ borderColor: 'rgba(34,197,94,0.15)', backgroundColor: 'rgba(34,197,94,0.03)' }}>
             <p className="text-xs text-gray-500 leading-relaxed">
               💡 For comparison: Coinbase runs a nearly identical Morpho-powered USDC lending product, but with a <strong className="text-gray-400">variable rate up to 10.8% plus MORPHO token rewards</strong>. Robinhood took the opposite bet — a <strong className="text-gray-400">fixed, insured 7%</strong> rather than a floating, uninsured, potentially higher rate. Neither platform built its own lending protocol; both chose Morpho as the underlying credit network.
-            </p>
-          </div>
-        </div>
-
-        {/* Most traded stock tokens */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-1">
-            <h2 className="text-lg font-medium text-gray-200">Most Traded Stock Tokens</h2>
-            <div
-              className="text-[10px] px-2 py-0.5 rounded-full border"
-              style={{ backgroundColor: 'rgba(34,197,94,0.1)', borderColor: 'rgba(34,197,94,0.3)', color: '#22C55E' }}
-            >
-              Onchain data
-            </div>
-          </div>
-          <p className="text-xs text-gray-600 mb-4">
-            More than 2,000 Stock Tokens are listed in the full catalog (roughly 190-200 with meaningful onchain trading volume), but activity is heavily concentrated: the four biggest names account for roughly 70% of all stock-token trading on the network. NVDA alone has traded over $700M across nearly 3 million swaps since mainnet — more than any other single asset, including index funds. Figures below are lifetime DEX volume through late August/early September 2026 and will shift as trading continues.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <TvlGrowthChart />
-            <a
-              href="https://robinhood.com/rhj/stocktokens/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl p-5 flex flex-col justify-center items-center text-center transition-all hover:scale-[1.02]"
-              style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}
-            >
-              <span className="text-3xl mb-3">📋</span>
-              <div className="text-sm font-medium text-gray-200 mb-1">Browse the Full Catalog</div>
-              <p className="text-xs text-gray-500 mb-3">
-                See all 2,000+ Stock Tokens — not just the top 4 by volume — directly on Robinhood's official product page.
-              </p>
-              <span className="text-xs px-4 py-2 rounded-lg font-medium" style={{ backgroundColor: '#22C55E', color: '#08100c' }}>
-                Open Official Catalog ↗
-              </span>
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {topStockTokens.map((s: any) => (
-              <div
-                key={s.ticker}
-                className="rounded-lg border p-5"
-                style={{ borderColor: 'rgba(34,197,94,0.2)', backgroundColor: 'rgba(34,197,94,0.04)' }}
-              >
-                <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <span className="font-medium" style={{ color: '#22C55E' }}>{s.ticker}</span>
-                  <span className="text-xs text-gray-500">{s.underlying}</span>
-                </div>
-                <div className="text-sm text-gray-200 mb-2">{s.name}</div>
-                <div className="text-xs text-gray-500 mb-3">{s.note}</div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-gray-800 text-gray-500">
-                    {s.volume}
-                  </span>
-                  {s.rank && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full" style={{ backgroundColor: 'rgba(34,197,94,0.1)', color: '#22C55E' }}>
-                      {s.rank}
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-lg border p-4 mt-4" style={{ borderColor: 'rgba(34,197,94,0.15)', backgroundColor: 'rgba(34,197,94,0.03)' }}>
-            <p className="text-xs text-gray-500 leading-relaxed">
-              ⚠️ Worth knowing: Robinhood Chain ran a 90-day gas subsidy covering swaps and stock-token transactions from launch, expiring around <strong className="text-gray-400">September 29, 2026</strong>. Some of the volume above may reflect subsidized activity — worth watching whether it holds once users pay full gas costs.
             </p>
           </div>
         </div>
