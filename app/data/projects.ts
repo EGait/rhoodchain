@@ -164,6 +164,23 @@ export const projects = [
     url: 'https://lighter.xyz',
   },
   {
+    id: 'virtuals',
+    name: 'Virtuals Protocol',
+    slug: 'virtuals',
+    icon: '\u{1F9E0}',
+    logo: '',
+    category: 'AI Agents',
+    badge: 'AI Agent Platform',
+    description: 'An AI agent launchpad and economy that has deployed 4,500+ agents on Robinhood Chain, spanning trading, yield, RWA, and agent-to-agent commerce.',
+    longDescription: "Virtuals Protocol brought its AI agent platform to Robinhood Chain, where builders have launched more than 4,500 agents generating over $150 million in agent-driven volume, with agent builders collectively raising $2.3 million. Live products span AI trading, yield optimization, privacy infrastructure, developer tools, token intelligence, tokenized real-world assets (including tokenized tax liens \u2014 a genuinely novel RWA category), collectibles, and agent-to-agent services. Virtuals fits squarely into the 'agentic AI' narrative Robinhood highlighted at its July 1 mainnet launch, positioning autonomous agents as economic participants on the chain rather than just trading tools.",
+    tags: ['AI Agents', 'Infrastructure', 'RWA'],
+    products: [
+      { name: 'Agent Launchpad', description: 'Deploy autonomous AI agents that trade, optimize yield, or provide services' },
+      { name: 'Tokenized Tax Liens', description: 'A novel RWA category brought onchain via agent-built products' },
+    ],
+    url: 'https://virtuals.io',
+  },
+  {
     id: 'arcus',
     name: 'Arcus',
     slug: 'arcus',
@@ -198,4 +215,4 @@ export const projects = [
   },
 ]
 
-export const categories = ["All", "Launchpad", "Memecoin", "DeFi", "Infrastructure"]
+export const categories = ["All", "Launchpad", "Memecoin", "DeFi", "AI Agents", "Infrastructure"]

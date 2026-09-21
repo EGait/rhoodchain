@@ -8,13 +8,13 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 border-b bg-[#08100c]/95 backdrop-blur-sm" style={{ borderColor: 'rgba(34,197,94,0.2)' }}>
-        <div className="flex items-center px-6 py-4">
+        <div className="relative flex items-center px-6 py-4">
           <a href="/" className="flex items-center gap-2">
             <img src="/icon.png" alt="RhoodChain" className="h-8 w-8 object-contain" />
             <span className="text-xl font-medium" style={{ color: '#22C55E' }}>RhoodChain</span>
           </a>
 
-          <div className="hidden md:flex gap-6 flex-1 justify-center">
+          <div className="hidden md:flex gap-6 absolute left-1/2 -translate-x-1/2">
             <a href="/" className="text-sm text-gray-500 hover:text-[#22C55E] transition-colors">Home</a>
             <a href="/projects" className="text-sm text-gray-500 hover:text-[#22C55E] transition-colors">Projects</a>
             <a href="/markets" className="text-sm text-gray-500 hover:text-[#22C55E] transition-colors">Markets</a>

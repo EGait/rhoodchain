@@ -41,7 +41,13 @@ export default function MarketsPage() {
             USDG is the primary stablecoin on Robinhood Chain, powering Robinhood Earn and everyday settlement.
           </p>
           {stablecoins.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className={
+              stablecoins.length === 1
+                ? "grid grid-cols-1 max-w-sm"
+                : stablecoins.length === 2
+                ? "grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl"
+                : "grid grid-cols-1 md:grid-cols-3 gap-4"
+            }>
               {stablecoins.map((coin: any) => (
                 <div key={coin.id} className="rounded-2xl p-5 transition-all hover:scale-[1.02]" style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}>
                   <div className="flex items-center gap-3 mb-3">
@@ -89,6 +95,9 @@ export default function MarketsPage() {
                     </div>
                     <span className="text-sm font-medium" style={{ color: '#22C55E' }}>{item.apy} APY</span>
                   </div>
+                  {item.mechanics && (
+                    <p className="text-xs text-gray-500 leading-relaxed">{item.mechanics}</p>
+                  )}
                 </div>
               ))}
             </div>
@@ -97,6 +106,12 @@ export default function MarketsPage() {
               Yield data coming soon.
             </div>
           )}
+
+          <div className="rounded-lg border p-4 mt-4" style={{ borderColor: 'rgba(34,197,94,0.15)', backgroundColor: 'rgba(34,197,94,0.03)' }}>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              💡 For comparison: Coinbase runs a nearly identical Morpho-powered USDC lending product, but with a <strong className="text-gray-400">variable rate up to 10.8% plus MORPHO token rewards</strong>. Robinhood took the opposite bet — a <strong className="text-gray-400">fixed, insured 7%</strong> rather than a floating, uninsured, potentially higher rate. Neither platform built its own lending protocol; both chose Morpho as the underlying credit network.
+            </p>
+          </div>
         </div>
 
         {/* Most traded stock tokens */}
