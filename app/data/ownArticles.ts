@@ -2,6 +2,18 @@
 
 export const ownArticles = [
   {
+    id: 'sec-innovation-exemption',
+    title: 'The SEC Just Opened a Door for Tokenized Stocks. Here\'s Why It\'s Bullish for Robinhood Chain.',
+    slug: 'sec-innovation-exemption',
+    description: 'The SEC\'s September 17 Innovation Exemption opens a legal path for tokenized US stocks — but Robinhood\'s current product doesn\'t qualify yet. Plus: Robinhood Chain vs Solana tokenized stock volume.',
+    summary: 'The SEC\'s September 17 Innovation Exemption opens a legal path for tokenized US stocks — but Robinhood\'s current product doesn\'t qualify yet. Plus: Robinhood Chain vs Solana tokenized stock volume.',
+    link: '/news/sec-innovation-exemption',
+    date: 'September 22, 2026',
+    readTime: '9 min read',
+    tag: 'Regulatory',
+    image: '/sec-innovation-exemption.jpg',
+  },
+  {
     id: 'arcus-dydx-robinhood',
     title: 'Arcus: The dYdX Team\'s $2 Billion Bet on Robinhood Chain',
     slug: 'arcus-dydx-robinhood',
