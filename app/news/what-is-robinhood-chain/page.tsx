@@ -55,7 +55,7 @@ export default function WhatIsRobinhoodChainPage() {
               </div>
               <div className="rounded-xl p-4" style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}>
                 <div className="text-sm font-medium text-gray-200 mb-1">Tokenized Stock Trading, 24/7</div>
-                <p className="text-xs text-gray-500">Stock Tokens are live for verified users in the EU/EEA via the Robinhood Wallet — the US is explicitly excluded pending SEC approval. Eligible holders can trade around the clock, place tokens in lending pools, or use them as DeFi collateral — well outside normal market hours.</p>
+                <p className="text-xs text-gray-500">Stock Tokens are live for verified users in the EU/EEA via the Robinhood Wallet. They're issued by Robinhood Assets (Jersey) Limited and, per the issuer's own disclosures, are not available in the US or to US persons, with additional named restrictions in Canada, the UK, and Switzerland. Eligible holders can trade around the clock, place tokens in lending pools, or use them as DeFi collateral — well outside normal market hours.</p>
               </div>
               <div className="rounded-xl p-4" style={{ backgroundColor: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.15)' }}>
                 <div className="text-sm font-medium text-gray-200 mb-1">AI-Native, Agentic Trading</div>

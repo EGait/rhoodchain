@@ -45,7 +45,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3 text-gray-500">
               <p>📰 <strong className="text-gray-400">Daily News</strong> — Stay up to date with the latest Robinhood Chain news and updates.</p>
               <p>🔭 <strong className="text-gray-400">Project Directory</strong> — Browse our curated directory of the best projects building on Robinhood Chain.</p>
-              <p>📈 <strong className="text-gray-400">Tokenized Stocks</strong> — Track Stock Tokens available to verified EU/EEA users through the Robinhood Wallet.</p>
+              <p>📈 <strong className="text-gray-400">Tokenized Stocks</strong> — Track Stock Tokens available to verified EU/EEA users through the Robinhood Wallet (not available in the US, Canada, UK, or Switzerland).</p>
               <p>🏦 <strong className="text-gray-400">Robinhood Earn</strong> — Compare yield products and lending markets on Robinhood Chain.</p>
               <p>💵 <strong className="text-gray-400">Stablecoins</strong> — Browse and compare stablecoins available on Robinhood Chain, including USDG.</p>
             </div>

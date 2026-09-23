@@ -38,7 +38,7 @@ export default function StockPairedMemecoinsPage() {
           <div>
             <h2 className="text-lg font-medium text-gray-200 mb-3">First, What Are Stock Tokens?</h2>
             <p className="mb-3">
-              Robinhood Stock Tokens are ERC-20 tokens that track the price of real equities. They're live for verified users in the EU/EEA through the Robinhood Wallet — the US is explicitly excluded pending SEC approval of a tokenized-equity framework — and they trade 24/7 well outside normal market hours.
+              Robinhood Stock Tokens are ERC-20 tokens that track the price of real equities. They're live for verified users in the EU/EEA through the Robinhood Wallet — not available in the US or to US persons, with additional named restrictions in Canada, the UK, and Switzerland — and they trade 24/7 well outside normal market hours.
             </p>
             <div className="rounded-xl p-4 border-l-4" style={{ backgroundColor: 'rgba(34,197,94,0.04)', borderColor: '#22C55E', borderTop: '1px solid rgba(34,197,94,0.12)', borderRight: '1px solid rgba(34,197,94,0.12)', borderBottom: '1px solid rgba(34,197,94,0.12)' }}>
               <div className="text-sm font-medium text-gray-200 mb-1">What they are not</div>

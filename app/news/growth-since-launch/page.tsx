@@ -34,7 +34,7 @@ export default function GrowthSinceLaunchPage() {
               The pitch: instead of stocks trading only 9:30am–4pm on weekdays through a traditional brokerage pipeline, tokenize them so they can trade 24/7, settle instantly, and plug into the same kind of onchain finance tools (lending, swapping, collateral) that crypto already has. Robinhood's own Stock Tokens — ERC-20s that track the price of real equities — are the flagship product.
             </p>
             <p>
-              One important caveat up front: these are currently available only to verified users in the <strong className="text-gray-200">EU and EEA</strong>. The US is explicitly excluded, pending SEC approval of a tokenized-securities framework. For the full breakdown of how the chain works, see our <a href="/news/what-is-robinhood-chain" style={{ color: '#22C55E' }}>explainer piece</a>.
+              One important caveat up front: Stock Tokens are available to verified users in the <strong className="text-gray-200">EU and EEA</strong>, but are not registered under US securities law and aren't available in the US or to US persons — with additional named restrictions in Canada, the UK, and Switzerland. For the full breakdown of how the chain works, see our <a href="/news/what-is-robinhood-chain" style={{ color: '#22C55E' }}>explainer piece</a>.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function GrowthSinceLaunchPage() {
             <h2 className="text-lg font-medium text-gray-200 mb-3">What to Watch Next</h2>
             <div className="flex flex-col gap-2">
               <p>• <strong className="text-gray-300">Whether RWA usage catches up to memecoin usage</strong> — right now the launchpad economy dwarfs the tokenized-stock use case in day-to-day activity.</p>
-              <p>• <strong className="text-gray-300">Whether the EU/EEA restriction loosens</strong> — Robinhood's CEO has publicly lobbied for a US tokenized-securities framework and submitted a formal proposal to the SEC.</p>
+              <p>• <strong className="text-gray-300">Whether the US, Canada, UK, and Switzerland restrictions loosen</strong> — Robinhood's CEO has publicly backed a US tokenized-securities framework, and the SEC's September 2026 Innovation Exemption is a first step (see our <a href="/news/sec-innovation-exemption" style={{ color: '#22C55E' }}>full breakdown</a>).</p>
               <p>• <strong className="text-gray-300">Whether stablecoin and TVL growth holds</strong> — chains that launch with a memecoin wave often see volume drop sharply once the initial speculation cools.</p>
               <p>• <strong className="text-gray-300">New RWA categories</strong> — Robinhood has signaled plans to eventually tokenize private equity, real estate, and other illiquid assets beyond public stocks.</p>
             </div>

@@ -27,8 +27,8 @@ export default function FeaturedResearch() {
         <div className="text-xs font-medium uppercase tracking-widest mb-5" style={{ color: '#22C55E' }}>
           Featured Research
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {ownArticles.slice(0, 3).map((article: any) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {ownArticles.slice(0, 4).map((article: any) => (
             <div
               key={article.id}
               onClick={() => router.push('/news/' + article.slug)}

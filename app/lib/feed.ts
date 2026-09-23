@@ -58,7 +58,7 @@ const STABLE_SECTION = section(
 const RWA_SECTION = section(
   "Real-World Assets (Stock Tokens, Robinhood Earn, Agentic Trading)",
   (rwas as any[]).slice(0, 20).map((x, i) => `${i + 1}. ${x.name} (${x.issuer}) — ${x.status}. ${trim(x.description, 110)}`),
-  "(Full list at /markets — EU/EEA only, US excluded pending SEC approval)"
+  "(Full list at /markets — EU/EEA only; not available in the US, Canada, UK, or Switzerland)"
 );
 
 const TOP_STOCKS_SECTION = section(

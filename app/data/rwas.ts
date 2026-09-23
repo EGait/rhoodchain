@@ -13,8 +13,8 @@ export const rwas = [
     category: 'Tokenized Equities',
     icon: '📈',
     logo: '',
-    description: 'Robinhood\'s flagship RWA: ERC-20 tokens issued by Robinhood Assets (Jersey) Limited that track the price of US equities and ETFs. They are tokenized debt securities that provide economic exposure only — holders get no shareholder rights, no voting rights, and no legal claim on the underlying shares. Live for verified EU/EEA users (US explicitly excluded pending SEC approval); catalog expanded from ~200 to 2,000+ tokens with a €1 minimum entry. Dividends are credited as an offchain USD-equivalent payment, not an onchain distribution. As of Sept 17, 2026, total distributed stock token value across the network reached $2.82B (+13.1% in 30 days) across 3.63M holder addresses (+125% month-over-month).',
-    status: 'Live (EU/EEA only)',
+    description: 'Robinhood\'s flagship RWA: ERC-20 tokens issued by Robinhood Assets (Jersey) Limited ("RHJ") that track the price of US equities and ETFs. They are tokenized debt securities that provide economic exposure only — holders get no shareholder rights, no voting rights, and no legal claim on the underlying shares. Not registered under US securities law: not available in the US or to US persons, with additional named restrictions in Canada, the UK, and Switzerland (a full jurisdiction list is published by RHJ). Available to eligible EU/EEA users. Catalog expanded from ~200 to 2,000+ tokens with a €1 minimum entry. Dividends are credited as an offchain USD-equivalent payment, not an onchain distribution. As of Sept 17, 2026, total distributed stock token value across the network reached $2.82B (+13.1% in 30 days) across 3.63M holder addresses (+125% month-over-month).',
+    status: 'Live (EU/EEA); US, Canada, UK, Switzerland restricted',
     url: 'https://docs.robinhood.com/chain/stock-tokens/',
   },
   {
